@@ -37,5 +37,23 @@ const App = () => {
     </div>
   );
 };
+import { useEffect } from "react";
+
+function App() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://embed.tawk.to/67d6e94fe009211911ba88f2/1imfnuouf";
+    script.async = true;
+    script.charset = "UTF-8";
+    script.setAttribute("crossorigin", "*");
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return <div>Chào mừng bạn!</div>;
+}
 
 export default App;
